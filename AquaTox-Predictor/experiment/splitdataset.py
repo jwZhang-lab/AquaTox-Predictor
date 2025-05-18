@@ -5,8 +5,8 @@ from sklearn.model_selection import train_test_split
 data = pd.read_csv('../data/aquatic_toxicity_group.csv')
 
 # 将数据分为训练集、验证集和测试集
-train_data, temp_data = train_test_split(data, test_size=0.3, random_state=42)  # 70% 训练集，30% 临时集
-val_data, test_data = train_test_split(temp_data, test_size=0.5, random_state=42)  # 从临时集中 15% 验证集，15% 测试集
+train_data, temp_data = train_test_split(data, test_size=0.2, random_state=42)  
+val_data, test_data = train_test_split(temp_data, test_size=0.5, random_state=42)  
 
 # 为每个数据集添加分组信息
 train_data['group'] = 'training'

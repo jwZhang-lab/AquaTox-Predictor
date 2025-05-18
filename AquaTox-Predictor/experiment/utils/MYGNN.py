@@ -314,10 +314,10 @@ class MGA(BaseGNN):
             in_feats = out_feats
 
 
-class Mymodel(nn.Module):
+class AquaToxPredictor(nn.Module):
     def __init__(self, rgcn_in_feats, rgcn_hidden_feats, num_rels , num_experts, expert_hidden_dim,
                 num_tasks, task_hidden_dim, fp_dim, drop_ratio, fp_type, device):
-        super(Mymodel, self).__init__()
+        super(AquaToxPredictor, self).__init__()
         
 
         self.rgcns = GraphKnowledgeExtractor(in_feats=rgcn_in_feats, rgcn_hidden_feats=rgcn_hidden_feats, n_tasks=num_tasks, return_weight=False,)
@@ -355,10 +355,10 @@ class fpMMOE(nn.Module):
         return mmoe_output
     
 
-class MymodelNoMMOE(nn.Module):
+class AquaToxPredictorNoMMOE(nn.Module):
     def __init__(self, rgcn_in_feats, rgcn_hidden_feats, shared_hidden_dim,
                  num_tasks, fp_dim, drop_ratio, fp_type, device):
-        super(MymodelNoMMOE, self).__init__()
+        super(AquaToxPredictorNoMMOE, self).__init__()
         
 
         self.rgcns = GraphKnowledgeExtractor(in_feats=rgcn_in_feats, rgcn_hidden_feats=rgcn_hidden_feats, n_tasks=num_tasks, return_weight=False,)
